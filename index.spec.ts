@@ -1,4 +1,4 @@
-import expect from "expect";
+import {expect} from "chai";
 import {sample} from "./index";
 
 describe("sample", function () {
@@ -7,6 +7,6 @@ describe("sample", function () {
         const result = sample();
 
         // Assert
-        expect(result).toEqual(true);
+        expect(result).to.equal(true);
     });
 });
