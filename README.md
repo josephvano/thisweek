@@ -1,7 +1,29 @@
-# ts-template
-Basic typescript starter project with testing using mocha runner.
+# thisweek
+This is a sample website built using react, next.js and graphql.
+
+The goal is to create a simple and user friendly todo application looking at the week.
 
 Contains basic linting in `tslint.json`
+
+## Features
+
+Using MoSCoW priority
+
+### Must
+
+* See the current week
+* Add todos
+* Cross off todos
+* Move todos
+
+### Should
+
+* Tagging
+* Filtering
+
+### Could
+
+* Login (OAuth)
 
 ## Commands
 
