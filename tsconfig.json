@@ -9,7 +9,7 @@
       "es2020.bigint",
       "es2020.string"
     ],
-    "module": "commonjs",
+    "module": "esnext",
     "target": "es2019",
     "strict": true,
     "esModuleInterop": true,
@@ -21,11 +21,16 @@
       "mocha"
     ],
     "allowJs": true,
+    "allowSyntheticDefaultImports": true,
     "noEmit": true,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve"
+    "jsx": "preserve",
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "preserveConstEnums": true,
+    "removeComments": false,
   },
   "include": [
     "./**/*.ts"

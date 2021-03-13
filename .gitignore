@@ -105,3 +105,6 @@ dist
 
 #intellij
 .idea/
+
+.DS_STORE
+.env.local
