@@ -1,0 +1,26 @@
+version: "3.3"
+
+services:
+  web:
+    container_name: 'thisweek-web'
+    ports:
+      - 8083:8083
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["yarn", "run", "start", "-p", "8083"]
+  database:
+    image: 'mongo'
+    container_name: 'thisweek-mongo'
+    environment:
+      - MONGO_INITDB_DATABASE=thisweek
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=******
+    volumes:
+      - ./data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+    ports:
+      - 27017:27017
+      - 27018:27018
+      - 27019:27019
+    

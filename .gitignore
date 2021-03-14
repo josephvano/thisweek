@@ -108,3 +108,5 @@ dist
 
 .DS_STORE
 .env.local
+
+data/
