@@ -8,6 +8,7 @@ import CssBaseline                         from '@material-ui/core/CssBaseline';
 import createCache                         from '@emotion/cache';
 import theme                               from '../theme';
 import "../../public/global.sass"
+import {Provider}                          from "next-auth/client";
 
 export const cache = createCache({key: 'css', prepend: true});
 
@@ -27,15 +28,18 @@ export default function MyApp(props: AppProps) {
       <Head>
         <title>thisweek</title>
         <meta name="viewport" content="initial-scale=1, width=device-width"/>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.ico"/>
       </Head>
-      <MuiThemeProvider theme={theme}>
-        <ThemeProvider theme={theme}>
-          {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-          <CssBaseline/>
-          <Component {...pageProps} />
-        </ThemeProvider>
-      </MuiThemeProvider>
+      <Provider session={pageProps.session}>
+        <MuiThemeProvider theme={theme}>
+          <ThemeProvider theme={theme}>
+            {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+            <CssBaseline/>
+            <Component {...pageProps} />
+          </ThemeProvider>
+        </MuiThemeProvider>
+      </Provider>
     </CacheProvider>
-  );
+  )
+    ;
 }

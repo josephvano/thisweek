@@ -12,10 +12,11 @@ services:
   database:
     image: 'mongo'
     container_name: 'thisweek-mongo'
+    env_file:
+      - .env_local
     environment:
       - MONGO_INITDB_DATABASE=thisweek
       - MONGO_INITDB_ROOT_USERNAME=root
-      - MONGO_INITDB_ROOT_PASSWORD=******
     volumes:
       - ./data:/data/db
       - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro

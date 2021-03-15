@@ -1,6 +1,6 @@
 import fetch from "node-fetch";
 
-type GitHubCredentials = {
+export type GitHubCredentials = {
   client_id: string;
   client_secret: string;
   code?: string;
@@ -74,7 +74,7 @@ export async function getUser(token: string): Promise<GitHubLoginResponse> {
 
 export const getCredentials = (): GitHubCredentials => {
   return {
-    client_id    : process.env.CLIENT_ID as string,
-    client_secret: process.env.CLIENT_SECRET as string
+    client_id    : process.env.GITHUB_CLIENT_ID as string,
+    client_secret: process.env.GITHUB_CLIENT_SECRET as string
   }
 }
